@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Documentacion PEC1</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;600;700&family=Playfair+Display:wght@700&display=swap');
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Source Sans 3', 'Segoe UI', Arial, sans-serif;
+      font-size: 11pt;
+      line-height: 1.6;
+      color: #2c2c2c;
+      background: #fff;
+    }
+
+    .page {
+      max-width: 210mm;
+      margin: 0 auto;
+      padding: 40mm 25mm 30mm;
+    }
+
+    .cover {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 250mm;
+      text-align: center;
+      page-break-after: always;
+    }
+
+    .cover h1 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 28pt;
+      color: #1a3a5c;
+      margin-bottom: 8px;
+    }
+
+    .cover .subtitle {
+      font-size: 14pt;
+      color: #5a5a5a;
+      margin-bottom: 30px;
+    }
+
+    .cover .line {
+      width: 120px;
+      height: 3px;
+      background: #48c9b0;
+      margin: 0 auto 30px;
+    }
+
+    .cover .institution {
+      font-size: 13pt;
+      color: #1a3a5c;
+      margin-bottom: 6px;
+    }
+
+    .cover table {
+      margin-top: 60px;
+      text-align: left;
+      border-collapse: collapse;
+    }
+
+    .cover table td {
+      padding: 6px 16px;
+      font-size: 11pt;
+    }
+
+    .cover table td:first-child {
+      font-weight: 700;
+      color: #1a3a5c;
+    }
+
+    h2 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 20pt;
+      color: #1a3a5c;
+      margin-top: 36px;
+      margin-bottom: 4px;
+    }
+
+    h2::after {
+      content: '';
+      display: block;
+      width: 100%;
+      height: 3px;
+      background: #48c9b0;
+      margin-top: 6px;
+      margin-bottom: 18px;
+    }
+
+    h3 {
+      font-size: 14pt;
+      color: #1a3a5c;
+      margin-top: 24px;
+      margin-bottom: 10px;
+    }
+
+    p {
+      margin-bottom: 12px;
+      text-align: justify;
+    }
+
+    ul, ol {
+      margin-bottom: 12px;
+      padding-left: 24px;
+    }
+
+    li {
+      margin-bottom: 6px;
+    }
+
+    code, pre {
+      font-family: 'Consolas', 'Courier New', monospace;
+      font-size: 9.5pt;
+      background: #f5f5f5;
+      border-radius: 4px;
+    }
+
+    code {
+      padding: 1px 4px;
+    }
+
+    pre {
+      padding: 12px 16px;
+      margin-bottom: 14px;
+      overflow-x: auto;
+      border-left: 3px solid #48c9b0;
+    }
+
+    table.deps {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 16px;
+      font-size: 10pt;
+    }
+
+    table.deps th {
+      background: #1a3a5c;
+      color: #fff;
+      padding: 8px 10px;
+      text-align: left;
+      font-weight: 600;
+    }
+
+    table.deps td {
+      padding: 7px 10px;
+      border-bottom: 1px solid #e0e0e0;
+    }
+
+    table.deps tr:nth-child(even) td {
+      background: #fafafa;
+    }
+
+    table.links {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 16px;
+      font-size: 10.5pt;
+    }
+
+    table.links th {
+      background: #1a3a5c;
+      color: #fff;
+      padding: 8px 12px;
+      text-align: left;
+      font-weight: 600;
+    }
+
+    table.links td {
+      padding: 8px 12px;
+      border-bottom: 1px solid #e0e0e0;
+    }
+
+    .toc {
+      page-break-after: always;
+    }
+
+    .toc h2::after { margin-bottom: 14px; }
+
+    .toc ol {
+      list-style: none;
+      padding-left: 0;
+      font-size: 12pt;
+    }
+
+    .toc li {
+      margin-bottom: 10px;
+      padding-left: 8px;
+    }
+
+    .page-break {
+      page-break-before: always;
+    }
+
+    @page {
+      margin: 20mm 22mm;
+    }
+
+    @media print {
+      body { font-size: 10.5pt; }
+      .page { padding: 0; max-width: none; }
+      h2 { page-break-after: avoid; }
+      h3 { page-break-after: avoid; }
+      pre { page-break-inside: avoid; }
+      table { page-break-inside: avoid; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- PORTADA -->
+<div class="page cover">
+  <h1>Documentacion PEC1</h1>
+  <p class="subtitle">Valldemossa, Soller y Palma de Mallorca</p>
+  <div class="line"></div>
+  <p class="institution">Herramientas HTML y CSS II</p>
+  <p class="institution">Universitat Oberta de Catalunya</p>
+
+  <table>
+    <tr><td>Asignatura:</td><td>Herramientas HTML y CSS II</td></tr>
+    <tr><td>Semestre:</td><td>2025-2 (Marzo 2026)</td></tr>
+    <tr><td>Actividad:</td><td>PEC 1 - Evaluacion Continua</td></tr>
+    <tr><td>Autor:</td><td>Federico Javier Martino</td></tr>
+  </table>
+</div>
+
+<!-- INDICE -->
+<div class="page toc">
+  <h2>Indice</h2>
+  <ol>
+    <li>1. Introduccion y descripcion del proyecto</li>
+    <li>2. Proceso de desarrollo</li>
+    <li>3. Eleccion y justificacion de la metodologia</li>
+    <li>4. Configuracion de Stylelint</li>
+    <li>5. Caracteristicas de Sass utilizadas</li>
+    <li>6. Dependencias externas</li>
+    <li>7. Decisiones de diseno y desarrollo</li>
+    <li>8. Responsive design</li>
+    <li>9. Publicacion: GitHub y Netlify</li>
+    <li>10. Conclusiones</li>
+  </ol>
+</div>
+
+<!-- CONTENIDO -->
+<div class="page">
+
+<!-- 1 -->
+<h2>1. Introduccion y descripcion del proyecto</h2>
+
+<p>El presente documento recoge la documentacion completa del proceso de desarrollo de la PEC1 de la asignatura Herramientas HTML y CSS II. El proyecto consiste en un sitio web de una sola pagina (single-page) dedicado a Valldemossa, Soller y Palma de Mallorca, tres de los destinos mas representativos de la isla, conectados por la Serra de Tramuntana, declarada Patrimonio de la Humanidad por la UNESCO.</p>
+
+<p>El sitio web ha sido desarrollado partiendo de UOC Boilerplate (version 3.13.0) e incorpora un workflow moderno de desarrollo frontend con Parcel como module bundler, Sass como preprocesador de estilos, y un conjunto de dependencias externas que enriquecen la experiencia del usuario. Se ha aplicado la metodologia BEM para la nomenclatura de clases CSS, junto con la guia de estilo de @mdo (Code Guide) para el ordenamiento de propiedades, validado todo ello mediante Stylelint.</p>
+
+<p>La pagina incluye las siguientes secciones: navegacion fija, hero de pantalla completa, seccion descriptiva del destino, tarjetas de puntos destacados, galeria de imagenes, seccion de como llegar con pasos visuales, mapa interactivo con Leaflet y cinco marcadores, consejos practicos para la visita, y footer con informacion del proyecto.</p>
+
+<!-- 2 -->
+<h2>2. Proceso de desarrollo</h2>
+
+<h3>2.1 Descarga y configuracion inicial</h3>
+
+<p>El primer paso fue clonar el repositorio de UOC Boilerplate desde GitHub mediante el comando git clone. A continuacion se verifico que la version de Node.js instalada fuera superior a 20.x ejecutando node -v en el terminal.</p>
+
+<pre>git clone https://github.com/uoc-advanced-html-css/uoc-boilerplate.git valldemossa-soller-palma
+cd valldemossa-soller-palma
+npm install</pre>
+
+<p>El comando npm install descargo e instalo todas las dependencias definidas en el package.json dentro de la carpeta node_modules, generando tambien el fichero package-lock.json con las versiones exactas de cada paquete.</p>
+
+<h3>2.2 Instalacion de dependencias</h3>
+
+<p>Se instalaron las siguientes dependencias adicionales al proyecto:</p>
+
+<pre>npm install --save @fortawesome/fontawesome-free
+npm install --save leaflet
+npm install --save @fontsource/playfair-display @fontsource/source-sans-pro</pre>
+
+<pre>npm install --save-dev stylelint stylelint-scss stylelint-order
+    stylelint-config-recommended-scss stylelint-config-recess-order</pre>
+
+<p>Las dependencias de produccion (--save) se anadieron como dependencies en el package.json, mientras que las herramientas de desarrollo (--save-dev) se anadieron como devDependencies. Esta separacion es importante porque las devDependencies solo se necesitan durante el proceso de desarrollo y compilacion, no en el bundle final.</p>
+
+<h3>2.3 Entorno de desarrollo</h3>
+
+<p>Durante el desarrollo se utilizo el comando npm run dev, que ejecuta las tareas clean y parcel:serve de forma secuencial. Parcel lanza un servidor de desarrollo en http://localhost:8123 que monitoriza los cambios en los ficheros fuente y actualiza el navegador automaticamente (hot reload). Esto permite un flujo de trabajo agil donde los cambios en HTML, SCSS o JavaScript se reflejan al instante.</p>
+
+<h3>2.4 Compilacion para produccion</h3>
+
+<p>Para la compilacion final se utilizo el comando npm run build, que ejecuta secuencialmente: clean (limpia carpetas de cache y dist), stylelint (valida las hojas de estilos) y parcel:build (compila, concatena, minifica y optimiza todos los assets). El resultado se genera en la carpeta dist/ con ficheros optimizados para produccion, incluyendo la conversion automatica de imagenes a formato WebP, la minificacion de CSS y JavaScript, y el hashing de nombres de ficheros para cache busting.</p>
+
+<pre>npm run build</pre>
+
+<!-- 3 -->
+<h2>3. Eleccion y justificacion de la metodologia</h2>
+
+<h3>3.1 Metodologia elegida: BEM</h3>
+
+<p>Se ha elegido BEM (Block, Element, Modifier) como metodologia principal para la nomenclatura de clases CSS. BEM propone una convencion de nombres estructurada que divide los componentes en tres categorias: bloques (componentes independientes), elementos (partes de un bloque que no tienen sentido por si solas) y modificadores (variaciones de un bloque o elemento).</p>
+
+<p>La nomenclatura sigue el patron: .bloque__elemento--modificador, donde los dos guiones bajos separan el bloque del elemento y los dos guiones separan el bloque o elemento del modificador.</p>
+
+<h3>3.2 Justificacion de la eleccion</h3>
+
+<p>La decision de usar BEM se basa en los siguientes criterios:</p>
+
+<ul>
+  <li><strong>Claridad:</strong> la nomenclatura BEM hace explicita la relacion entre los elementos HTML y sus estilos. Al leer una clase como .hero__title, queda claro que se trata del titulo dentro del bloque hero.</li>
+  <li><strong>Especificidad plana:</strong> BEM fomenta el uso de selectores de una sola clase, evitando problemas de especificidad que surgen con selectores anidados o combinados.</li>
+  <li><strong>Modularidad:</strong> cada bloque es un componente independiente que puede reutilizarse sin conflictos. Los bloques definidos en este proyecto (nav, hero, about, highlights, gallery, route, map-section, tips, footer) son autosuficientes.</li>
+  <li><strong>Escalabilidad:</strong> aunque este proyecto es de una sola pagina, la nomenclatura BEM facilita la expansion futura sin riesgo de colisiones de nombres.</li>
+  <li><strong>Compatibilidad con Sass:</strong> la sintaxis de anidamiento de Sass con el operador &amp; se integra perfectamente con BEM, permitiendo escribir los estilos de forma compacta y organizada.</li>
+</ul>
+
+<h3>3.3 Guia de estilo complementaria: Code Guide (@mdo)</h3>
+
+<p>Ademas de BEM, se ha adoptado la guia de estilo de Code Guide de Mark Otto para el ordenamiento de las propiedades CSS. Esta guia propone un orden logico que agrupa las propiedades por tipo: primero las de posicionamiento (position, top, right...), despues las del modelo de caja (display, width, padding, margin...), luego las tipograficas (font-family, font-size, color...) y finalmente las visuales (background, border, box-shadow...). Este orden se aplica automaticamente mediante el plugin stylelint-config-recess-order.</p>
+
+<h3>3.4 Aplicacion practica de BEM en el proyecto</h3>
+
+<p>Cada seccion de la pagina esta definida como un bloque BEM independiente. Por ejemplo, el bloque .nav contiene los elementos .nav__container, .nav__brand, .nav__toggle, .nav__list, .nav__item y .nav__link. El modificador .nav__list--open se usa para controlar la visibilidad del menu en dispositivos moviles.</p>
+
+<p>Otro ejemplo es el bloque .highlights, donde .highlights__card es un elemento y podria tener un modificador como .highlights__card--featured si se quisiera destacar alguna tarjeta en particular. Esta estructura se repite de forma consistente en todos los bloques del proyecto.</p>
+
+<!-- 4 -->
+<h2>4. Configuracion de Stylelint</h2>
+
+<p>Stylelint se ha configurado en el fichero .stylelintrc de la raiz del proyecto. Se extienden dos configuraciones base: stylelint-config-recommended-scss, que proporciona un conjunto de reglas recomendadas para ficheros SCSS, y stylelint-config-recess-order, que aplica el orden de propiedades segun la guia de estilo de @mdo. Este ultimo depende del plugin stylelint-order, que se instalo como devDependency adicional para gestionar el ordenamiento automatico de las propiedades CSS.</p>
+
+<p>Las reglas personalizadas incluyen:</p>
+
+<ul>
+  <li><strong>selector-class-pattern:</strong> expresion regular que valida que todas las clases sigan la nomenclatura BEM. El patron acepta bloques (.bloque), elementos (.bloque__elemento) y hasta dos modificadores (.bloque--mod1--mod2).</li>
+  <li><strong>max-nesting-depth: 4</strong> - limita la profundidad maxima de anidamiento en Sass a 4 niveles para evitar selectores excesivamente especificos.</li>
+  <li><strong>scss/at-rule-no-unknown: true</strong> - valida que las at-rules utilizadas en SCSS sean conocidas, previniendo errores tipograficos.</li>
+  <li><strong>declaration-block-no-duplicate-properties: true</strong> - previene propiedades duplicadas dentro de un mismo bloque de declaraciones.</li>
+  <li><strong>color-no-invalid-hex: true</strong> - asegura que los codigos hexadecimales de color sean validos.</li>
+  <li><strong>font-family-no-duplicate-names: true</strong> - evita la repeticion de nombres de fuentes en una misma declaracion.</li>
+  <li><strong>block-no-empty: true</strong> - senala bloques de declaraciones vacios que deben eliminarse.</li>
+  <li><strong>no-empty-source: true</strong> - detecta ficheros de estilos vacios.</li>
+</ul>
+
+<p>Ademas, se anadio el script de Stylelint al package.json y se integro en la rutina de build, de forma que la compilacion para produccion solo se completa si las hojas de estilos pasan la validacion. El comando npm run build ejecuta secuencialmente: clean, stylelint y parcel:build.</p>
+
+<!-- 5 -->
+<h2>5. Caracteristicas de Sass utilizadas</h2>
+
+<p>Se han utilizado todas las caracteristicas de Sass requeridas por el enunciado:</p>
+
+<h3>5.1 Variables</h3>
+
+<p>Definidas en el fichero _variables.scss, se han creado variables para la paleta de colores (inspirada en el Mediterraneo: azules, turquesas, arena), tipografia (familias de fuentes, tamanos, alturas de linea), espaciado (sistema de 8 puntos con valores de xs a 3xl), breakpoints para responsive design, sombras, bordes redondeados y duraciones de transicion. Ademas, se han usado funciones nativas de Sass como color.scale() para generar colores derivados.</p>
+
+<h3>5.2 Anidado (Nesting)</h3>
+
+<p>El anidado se ha utilizado extensivamente en combinacion con BEM, usando el operador &amp; de Sass para generar los selectores de elementos y modificadores. Por ejemplo, dentro del bloque .nav, los elementos se definen como &amp;__container, &amp;__brand, &amp;__list, etc. Tambien se ha usado el anidado para las media queries con @include respond-to(), manteniendo las reglas responsive junto a las reglas base de cada elemento.</p>
+
+<h3>5.3 Funciones personalizadas</h3>
+
+<p>Se han creado tres funciones personalizadas en el fichero _mixins.scss:</p>
+
+<ul>
+  <li><strong>to-rem($px):</strong> convierte valores en pixeles a unidades rem, facilitando el trabajo con unidades relativas. Utiliza el modulo sass:math para la division.</li>
+  <li><strong>overlay-color($base-color, $opacity):</strong> genera una version semi-transparente de un color mediante rgba, utilizada para los overlays del hero y la navegacion.</li>
+  <li><strong>text-contrast($bg):</strong> devuelve un color de texto claro u oscuro segun la luminosidad del color de fondo, usando color.channel() del modulo sass:color. Se aplica para garantizar la legibilidad del texto sobre fondos de diferentes tonalidades.</li>
+</ul>
+
+<h3>5.4 Parciales e importacion</h3>
+
+<p>Los estilos estan organizados en multiples ficheros parciales (prefijo _) que se importan mediante la directiva @use de Sass. La estructura es la siguiente: _variables.scss (variables y colores), _mixins.scss (funciones y mixins), _dependencies.scss (dependencias de npm) y layouts/_home.scss (estilos de la pagina). El punto de entrada es main.scss, que importa los demas parciales. El uso de @use en lugar de @import (deprecated) permite un control mas preciso de los namespaces y evita la contaminacion del scope global.</p>
+
+<h3>5.5 Mixins</h3>
+
+<p>Se han definido los siguientes mixins reutilizables:</p>
+
+<ul>
+  <li><strong>respond-to($breakpoint):</strong> encapsula las media queries para los breakpoints definidos (sm, md, lg, xl), facilitando el enfoque mobile first.</li>
+  <li><strong>container:</strong> aplica un ancho maximo, margenes automaticos y padding lateral para centrar el contenido.</li>
+  <li><strong>section-padding:</strong> aplica padding vertical consistente a las secciones, con valores diferentes segun el breakpoint.</li>
+  <li><strong>hover-lift($scale):</strong> efecto visual de elevacion al hacer hover, con transicion de transform y box-shadow.</li>
+  <li><strong>heading($size):</strong> aplica la fuente serif (Playfair Display), peso y altura de linea para titulos.</li>
+  <li><strong>sr-only:</strong> oculta visualmente un elemento pero lo mantiene accesible para lectores de pantalla.</li>
+</ul>
+
+<!-- 6 -->
+<h2>6. Dependencias externas</h2>
+
+<table class="deps">
+  <thead>
+    <tr><th>Dependencia</th><th>Tipo</th><th>Uso en el proyecto</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>FontAwesome Free</td><td>Produccion</td><td>Iconos en navegacion, tarjetas, badges, footer y mapa</td></tr>
+    <tr><td>Leaflet</td><td>Produccion</td><td>Mapa interactivo con 5 marcadores en Valldemossa, Soller y Palma</td></tr>
+    <tr><td>@fontsource/playfair-display</td><td>Produccion</td><td>Fuente serif para titulos y encabezados</td></tr>
+    <tr><td>@fontsource/source-sans-pro</td><td>Produccion</td><td>Fuente sans-serif para cuerpo de texto</td></tr>
+    <tr><td>Stylelint</td><td>Desarrollo</td><td>Validacion automatica de las hojas de estilos SCSS</td></tr>
+    <tr><td>stylelint-scss</td><td>Desarrollo</td><td>Soporte de sintaxis SCSS para Stylelint</td></tr>
+    <tr><td>stylelint-config-recommended-scss</td><td>Desarrollo</td><td>Configuracion base recomendada para SCSS</td></tr>
+    <tr><td>stylelint-config-recess-order</td><td>Desarrollo</td><td>Orden de propiedades CSS segun Code Guide</td></tr>
+    <tr><td>stylelint-order</td><td>Desarrollo</td><td>Plugin de ordenamiento de propiedades, requerido por stylelint-config-recess-order</td></tr>
+  </tbody>
+</table>
+
+<p>La eleccion de Fontsource frente a Google Fonts se justifica por la mejora en privacidad (no se realizan peticiones a servidores externos) y rendimiento (las fuentes se incluyen en el bundle y se cargan de forma local). Leaflet se eligio frente a Google Maps por ser una libreria de codigo abierto, ligera y sin necesidad de API key.</p>
+
+<!-- 7 -->
+<h2>7. Decisiones de diseno y desarrollo</h2>
+
+<h3>7.1 Paleta de colores</h3>
+
+<p>La paleta de colores se inspira en los elementos naturales de Mallorca: los azules profundos del Mediterraneo ($color-sea-deep: #1a3a5c), los turquesas de las aguas poco profundas ($color-turquoise: #48c9b0), los tonos arena de la costa ($color-sand: #f5e6c8) y los marrones de la piedra de Valldemossa ($color-rock: #6b5b4f). Esta paleta crea una atmosfera coherente con el destino que se presenta.</p>
+
+<h3>7.2 Tipografia</h3>
+
+<p>Se ha elegido un emparejamiento clasico: Playfair Display (serif) para titulos y encabezados, que aporta elegancia y personalidad, y Source Sans Pro (sans-serif) para el cuerpo de texto, que ofrece una lectura comoda en pantalla. Ambas fuentes se cargan localmente mediante Fontsource.</p>
+
+<h3>7.3 Estructura de la pagina</h3>
+
+<p>La pagina sigue un flujo vertical narrativo que guia al visitante desde la primera impresion (hero a pantalla completa) hasta la informacion practica (consejos y mapa). Las secciones alternan fondos claros y oscuros para crear un ritmo visual que mantiene el interes del usuario. La seccion "Como llegar" usa un fondo con gradiente en tonos azules que rompe con el patron claro y aporta variedad.</p>
+
+<h3>7.4 HTML semantico</h3>
+
+<p>Se ha prestado especial atencion a la semantica del HTML. La estructura del documento utiliza las etiquetas &lt;header&gt; para envolver la navegacion, &lt;main&gt; para el contenido principal de la pagina, &lt;section&gt; para cada bloque tematico, &lt;article&gt; para las tarjetas de puntos destacados, &lt;figure&gt; y &lt;figcaption&gt; para las imagenes de la galeria, y &lt;footer&gt; para el pie de pagina. Todos los estilos se aplican exclusivamente desde las hojas de estilos SCSS, sin recurrir a estilos inline en el HTML.</p>
+
+<h3>7.5 PostHTML</h3>
+
+<p>Se ha utilizado el plugin posthtml-include, configurado en el fichero .posthtmlrc, para separar el footer en un fichero parcial (views/footer.html). La etiqueta no estandar include permite incluir este fichero en el index.html durante la compilacion, manteniendo el codigo organizado y facilitando la reutilizacion del footer si se anadieran mas paginas en el futuro.</p>
+
+<h3>7.6 JavaScript</h3>
+
+<p>El fichero main.js contiene tres funcionalidades: la inicializacion del mapa Leaflet con cinco marcadores geolocalizados (Valldemossa, Soller, Port de Soller, Catedral de La Seu y Castell de Bellver) con popups informativos; el toggle del menu de navegacion en dispositivos moviles con gestion de estados ARIA para accesibilidad; y el smooth scroll para los enlaces internos de navegacion.</p>
+
+<!-- 8 -->
+<h2>8. Responsive design</h2>
+
+<p>Se ha seguido una aproximacion mobile first, donde los estilos base estan pensados para pantallas pequenas y se van adaptando a pantallas mas grandes mediante media queries progresivas. Los breakpoints definidos son: sm (576px), md (768px), lg (992px) y xl (1200px).</p>
+
+<p>Ejemplos concretos de adaptacion responsive:</p>
+
+<ul>
+  <li><strong>Navegacion:</strong> en movil se muestra un boton hamburguesa que despliega el menu verticalmente. En pantallas medianas (md) la navegacion se muestra horizontalmente.</li>
+  <li><strong>Hero:</strong> el tamano del titulo se escala de 48px (movil) a 64px (desktop) y el subtitulo de 18px a 24px.</li>
+  <li><strong>Highlights:</strong> las tarjetas pasan de 1 columna (movil) a 2 columnas (sm) y 3 columnas (lg).</li>
+  <li><strong>Galeria:</strong> de 1 columna a 2 (sm) y 4 columnas (lg).</li>
+  <li><strong>Seccion "Como llegar":</strong> de 1 columna a 2 (md) y 4 (lg).</li>
+  <li><strong>Mapa:</strong> la altura aumenta de 350px a 450px en pantallas medianas.</li>
+  <li><strong>Secciones:</strong> el padding vertical aumenta de 4rem a 6rem en pantallas medianas.</li>
+</ul>
+
+<!-- 9 -->
+<h2>9. Publicacion: GitHub y Netlify</h2>
+
+<p>El codigo fuente del proyecto se ha publicado en un repositorio de GitHub. El repositorio incluye todos los ficheros fuente, la configuracion del proyecto y los ficheros de configuracion de la raiz. La carpeta node_modules no se incluye en el repositorio gracias a la configuracion del fichero .gitignore.</p>
+
+<p>El sitio web se ha desplegado en Netlify mediante Continuous Deployment vinculado al repositorio de GitHub. Netlify detecta automaticamente los cambios en la rama principal, ejecuta el comando npm run build y publica el contenido de la carpeta dist/ generada en el servidor.</p>
+
+<table class="links">
+  <thead>
+    <tr><th>Recurso</th><th>Enlace</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>Repositorio GitHub</td><td>https://github.com/Federicojaviermartino/mallorca-esencial-uoc</td></tr>
+    <tr><td>Web publica (Netlify)</td><td>[URL de Netlify - completar antes de la entrega]</td></tr>
+    <tr><td>Video explicativo</td><td>[URL del video - completar antes de la entrega]</td></tr>
+  </tbody>
+</table>
+
+<!-- 10 -->
+<h2>10. Conclusiones</h2>
+
+<p>El desarrollo de esta PEC ha permitido consolidar los conocimientos adquiridos en los modulos 1 y 2 de la asignatura, poniendo en practica un workflow moderno de desarrollo frontend. El uso de UOC Boilerplate como punto de partida facilito la configuracion inicial del proyecto, permitiendo centrar el esfuerzo en el desarrollo y el diseno.</p>
+
+<p>La aplicacion de BEM como metodologia de nomenclatura, combinada con la guia de estilo de @mdo para el orden de propiedades y la validacion automatica con Stylelint, ha resultado en un codigo CSS ordenado, coherente y facil de mantener. Las funcionalidades de Sass (variables, anidado, funciones, parciales, mixins) han demostrado su utilidad para generar hojas de estilos mas eficientes y modulares.</p>
+
+<p>La incorporacion de dependencias externas como Leaflet, FontAwesome y Fontsource ha enriquecido la experiencia del usuario, aportando interactividad (mapa con cinco puntos de interes entre Valldemossa, Soller y Palma), iconografia (iconos) y personalidad tipografica (fuentes), todo ello gestionado de forma local a traves de npm sin depender de CDNs externos.</p>
+
+</div>
+
+</body>
+</html>

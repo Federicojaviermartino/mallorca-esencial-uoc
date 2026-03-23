@@ -1,0 +1,442 @@
+<!doctype html>
+
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Descubre Valldemossa, Soller y Palma de Mallorca, tres joyas del Mediterraneo entre montanas, valles de naranjos y un casco historico unico. Guia completa para tu visita." />
+    <link rel="stylesheet" type="text/css" href="./assets/styles/main.scss" />
+    <!-- do not remove this line! -->
+    <title>Valldemossa, Soller y Palma | Mallorca</title>
+  </head>
+  <body>
+
+    <!-- Navigation -->
+    <header>
+    <nav class="nav" id="nav">
+      <div class="nav__container">
+        <a href="#hero" class="nav__brand">
+          <i class="fas fa-sun"></i> Mallorca Esencial
+        </a>
+        <button class="nav__toggle" id="nav-toggle" aria-label="Abrir menu de navegacion">
+          <i class="fas fa-bars"></i>
+        </button>
+        <ul class="nav__list" id="nav-list">
+          <li class="nav__item">
+            <a href="#about" class="nav__link">El destino</a>
+          </li>
+          <li class="nav__item">
+            <a href="#highlights" class="nav__link">Destacados</a>
+          </li>
+          <li class="nav__item">
+            <a href="#gallery" class="nav__link">Galeria</a>
+          </li>
+          <li class="nav__item">
+            <a href="#route" class="nav__link">Como llegar</a>
+          </li>
+          <li class="nav__item">
+            <a href="#map" class="nav__link">Mapa</a>
+          </li>
+          <li class="nav__item">
+            <a href="#tips" class="nav__link">Consejos</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    </header>
+
+    <main>
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
+      <div class="hero__background"></div>
+      <div class="hero__overlay"></div>
+      <div class="hero__content">
+        <span class="hero__badge"><i class="fas fa-map-marker-alt"></i> Illes Balears, Espana</span>
+        <h1 class="hero__title">Valldemossa, Soller y Palma</h1>
+        <p class="hero__subtitle">
+          Tres joyas de Mallorca unidas por la Serra de Tramuntana.
+          Pueblos de piedra dorada, un valle de naranjos con tranvia historico,
+          la huella de Chopin y una catedral gotica frente al mar.
+        </p>
+        <a href="#about" class="hero__cta">
+          Explorar <i class="fas fa-arrow-down"></i>
+        </a>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+      <div class="about__container">
+        <div class="section-title">
+          <h2 class="section-title__heading">El Destino</h2>
+          <hr class="section-title__line" />
+          <p class="section-title__description">
+            Un viaje entre la serenidad de la montana, un valle de naranjos y la vitalidad de la capital balear
+          </p>
+        </div>
+        <div class="about__grid">
+          <div class="about__image-wrapper">
+            <picture>
+              <source srcset="./assets/images/about.jpg?as=webp&width=600" type="image/webp" />
+              <img
+                src="./assets/images/about.jpg?width=600"
+                alt="Vista panoramica de Valldemossa con sus tejados de piedra y la Serra de Tramuntana al fondo"
+                class="about__image"
+                loading="lazy"
+              />
+            </picture>
+          </div>
+          <div class="about__body">
+            <p class="about__text">
+              Valldemossa es un pequeno pueblo de calles empedradas y fachadas de piedra
+              enclavado en la Serra de Tramuntana, declarada Patrimonio de la Humanidad
+              por la UNESCO. Famoso por la Real Cartuja donde Frederic Chopin y George Sand
+              pasaron el invierno de 1838, este rincon conserva un encanto intacto entre
+              jardines, olivos centenarios y vistas al Mediterraneo.
+            </p>
+            <p class="about__text">
+              Soller, conocido como el valle de los naranjos, se esconde entre montanas
+              a pocos kilometros de Valldemossa. Su plaza con la iglesia modernista de
+              Sant Bartomeu, las casonas senoriales de la epoca del comercio de citricos
+              con Francia y su celebre tranvia de madera que conecta el pueblo con el
+              Port de Soller lo convierten en una parada imprescindible.
+            </p>
+            <p class="about__text">
+              A solo 30 kilometros al sur, Palma de Mallorca despliega su monumental casco
+              antiguo dominado por La Seu, la imponente catedral gotica que se refleja en
+              el mar. Barrios como Sa Gerreria y Santa Catalina combinan historia arabe,
+              judia y cristiana con una escena gastronomica y cultural de primer nivel.
+              Juntos, estos tres destinos ofrecen el contraste perfecto entre montana,
+              valle y ciudad.
+            </p>
+            <ul class="about__detail-list">
+              <li class="about__detail-item">
+                <i class="fas fa-landmark"></i> Patrimonio UNESCO
+              </li>
+              <li class="about__detail-item">
+                <i class="fas fa-music"></i> Herencia de Chopin
+              </li>
+              <li class="about__detail-item">
+                <i class="fas fa-train"></i> Tranvia historico
+              </li>
+              <li class="about__detail-item">
+                <i class="fas fa-church"></i> Catedral de La Seu
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Highlights Section -->
+    <section class="highlights" id="highlights">
+      <div class="highlights__container">
+        <div class="section-title">
+          <h2 class="section-title__heading">Que los hace especiales</h2>
+          <hr class="section-title__line" />
+          <p class="section-title__description">
+            Seis razones por las que Valldemossa, Soller y Palma son una visita imprescindible
+          </p>
+        </div>
+        <div class="highlights__grid">
+          <article class="highlights__card">
+            <div class="highlights__card-icon">
+              <i class="fas fa-archway"></i>
+            </div>
+            <h3 class="highlights__card-title">La Real Cartuja</h3>
+            <p class="highlights__card-text">
+              Monasterio del siglo XIV en Valldemossa donde Chopin compuso
+              algunos de sus preludios mas celebres. Las celdas, los jardines
+              y la farmacia antigua transportan al visitante a otra epoca.
+            </p>
+          </article>
+          <article class="highlights__card">
+            <div class="highlights__card-icon">
+              <i class="fas fa-train"></i>
+            </div>
+            <h3 class="highlights__card-title">Tranvia de Soller</h3>
+            <p class="highlights__card-text">
+              Un tranvia de madera de 1913 recorre los 5 kilometros entre
+              Soller y su puerto bordeando huertos de naranjos y limoneros.
+              Tambien el tren historico conecta Soller con Palma desde 1912.
+            </p>
+          </article>
+          <article class="highlights__card">
+            <div class="highlights__card-icon">
+              <i class="fas fa-church"></i>
+            </div>
+            <h3 class="highlights__card-title">Catedral de La Seu</h3>
+            <p class="highlights__card-text">
+              Obra maestra del gotico levantino en Palma con uno de los
+              rosetones mas grandes del mundo. Su ubicacion frente al mar
+              y las intervenciones de Gaudi y Barcelo la hacen unica.
+            </p>
+          </article>
+          <article class="highlights__card">
+            <div class="highlights__card-icon">
+              <i class="fas fa-cookie-bite"></i>
+            </div>
+            <h3 class="highlights__card-title">Gastronomia local</h3>
+            <p class="highlights__card-text">
+              La coca de patata de Valldemossa, el zumo de naranja recien
+              exprimido de Soller y la ensaimada de Palma. Tres sabores
+              que definen la identidad culinaria de cada destino.
+            </p>
+          </article>
+          <article class="highlights__card">
+            <div class="highlights__card-icon">
+              <i class="fas fa-mountain"></i>
+            </div>
+            <h3 class="highlights__card-title">Serra de Tramuntana</h3>
+            <p class="highlights__card-text">
+              Cadena montanosa que recorre 90 kilometros de la costa noroeste
+              y conecta los tres destinos. Rutas de senderismo entre bancales
+              de piedra seca, bosques de encinas y miradores que cortan la respiracion.
+            </p>
+          </article>
+          <article class="highlights__card">
+            <div class="highlights__card-icon">
+              <i class="fas fa-palette"></i>
+            </div>
+            <h3 class="highlights__card-title">Arte y cultura</h3>
+            <p class="highlights__card-text">
+              Desde la Fundacion Miro y Es Baluard en Palma hasta el Museo
+              Modernista de Can Prunera en Soller, la region alberga una escena
+              artistica vibrante que inspiro a pintores y musicos durante siglos.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section class="gallery" id="gallery">
+      <div class="gallery__container">
+        <div class="section-title">
+          <h2 class="section-title__heading">Galeria</h2>
+          <hr class="section-title__line" />
+          <p class="section-title__description">
+            Imagenes que capturan la esencia de estos tres rincones mallorquines
+          </p>
+        </div>
+        <div class="gallery__grid">
+          <figure class="gallery__item">
+            <picture>
+              <source srcset="./assets/images/gallery1.jpg?as=webp&width=400" type="image/webp" />
+              <img
+                src="./assets/images/gallery1.jpg?width=400"
+                alt="Calles empedradas de Valldemossa con macetas de flores"
+                class="gallery__image"
+                loading="lazy"
+              />
+            </picture>
+            <figcaption class="gallery__caption">Calles de Valldemossa</figcaption>
+          </figure>
+          <figure class="gallery__item">
+            <picture>
+              <source srcset="./assets/images/gallery2.jpg?as=webp&width=400" type="image/webp" />
+              <img
+                src="./assets/images/gallery2.jpg?width=400"
+                alt="Tranvia historico de Soller cruzando el valle de naranjos"
+                class="gallery__image"
+                loading="lazy"
+              />
+            </picture>
+            <figcaption class="gallery__caption">Tranvia de Soller</figcaption>
+          </figure>
+          <figure class="gallery__item">
+            <picture>
+              <source srcset="./assets/images/gallery3.jpg?as=webp&width=400" type="image/webp" />
+              <img
+                src="./assets/images/gallery3.jpg?width=400"
+                alt="Catedral de La Seu reflejada en el lago del Parc de la Mar"
+                class="gallery__image"
+                loading="lazy"
+              />
+            </picture>
+            <figcaption class="gallery__caption">La Seu y Parc de la Mar</figcaption>
+          </figure>
+          <figure class="gallery__item">
+            <picture>
+              <source srcset="./assets/images/gallery4.jpg?as=webp&width=400" type="image/webp" />
+              <img
+                src="./assets/images/gallery4.jpg?width=400"
+                alt="Port de Soller con barcas de pescadores al atardecer"
+                class="gallery__image"
+                loading="lazy"
+              />
+            </picture>
+            <figcaption class="gallery__caption">Port de Soller</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- Route Section -->
+    <section class="route" id="route">
+      <div class="route__container">
+        <div class="section-title">
+          <h2 class="section-title__heading">Como llegar</h2>
+          <hr class="section-title__line" />
+          <p class="section-title__description">
+            Una ruta circular entre la capital, la montana y el valle
+          </p>
+        </div>
+        <div class="route__grid">
+          <div class="route__step">
+            <div class="route__step-number">1</div>
+            <h3 class="route__step-title">Llegar a Palma</h3>
+            <p class="route__step-text">
+              El aeropuerto de Son Sant Joan conecta con las principales
+              ciudades europeas. Desde el aeropuerto, el centro de Palma
+              esta a 15 minutos en coche o autobus.
+            </p>
+          </div>
+          <div class="route__step">
+            <div class="route__step-number">2</div>
+            <h3 class="route__step-title">Palma a Valldemossa</h3>
+            <p class="route__step-text">
+              Por la MA-1110, son 18 km de carretera que sube entre
+              pinares hacia la Serra de Tramuntana. En autobus, la
+              linea 210 sale cada hora desde la Estacion Intermodal.
+            </p>
+          </div>
+          <div class="route__step">
+            <div class="route__step-number">3</div>
+            <h3 class="route__step-title">Valldemossa a Soller</h3>
+            <p class="route__step-text">
+              Continua por la MA-10, una carretera panoramica de 20 km
+              entre cumbres y miradores. Tambien puedes ir de Palma a
+              Soller en el tren historico de 1912.
+            </p>
+          </div>
+          <div class="route__step">
+            <div class="route__step-number">4</div>
+            <h3 class="route__step-title">Soller y Port de Soller</h3>
+            <p class="route__step-text">
+              Recorre el pueblo a pie y toma el tranvia de madera hasta
+              el puerto. Desde alli, barcos de excursion navegan la costa
+              de la Tramuntana.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Map Section -->
+    <section class="map-section" id="map">
+      <div class="map-section__container">
+        <div class="section-title">
+          <h2 class="section-title__heading">Ubicacion</h2>
+          <hr class="section-title__line" />
+          <p class="section-title__description">
+            Valldemossa, Soller y Palma en el corazon de Mallorca
+          </p>
+        </div>
+        <div class="map-section__wrapper">
+          <div class="map-section__map" id="leaflet-map"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Tips Section -->
+    <section class="tips" id="tips">
+      <div class="tips__container">
+        <div class="section-title">
+          <h2 class="section-title__heading">Consejos para tu visita</h2>
+          <hr class="section-title__line" />
+          <p class="section-title__description">
+            Todo lo que necesitas saber antes de ir
+          </p>
+        </div>
+        <div class="tips__grid">
+          <div class="tips__card">
+            <div class="tips__card-icon">
+              <i class="fas fa-clock"></i>
+            </div>
+            <div class="tips__card-content">
+              <h3 class="tips__card-title">Mejor horario</h3>
+              <p class="tips__card-text">
+                Valldemossa es mas tranquila a primera hora. En Palma,
+                La Seu abre a las 10:00. El tranvia de Soller sale desde
+                las 8:00 y conviene madrugar en verano.
+              </p>
+            </div>
+          </div>
+          <div class="tips__card">
+            <div class="tips__card-icon">
+              <i class="fas fa-sun"></i>
+            </div>
+            <div class="tips__card-content">
+              <h3 class="tips__card-title">Mejor epoca</h3>
+              <p class="tips__card-text">
+                De abril a junio y septiembre a octubre. Temperaturas agradables
+                y menos turistas. Febrero para la floracion del almendro
+                y marzo para los naranjos de Soller en plena cosecha.
+              </p>
+            </div>
+          </div>
+          <div class="tips__card">
+            <div class="tips__card-icon">
+              <i class="fas fa-shoe-prints"></i>
+            </div>
+            <div class="tips__card-content">
+              <h3 class="tips__card-title">Calzado comodo</h3>
+              <p class="tips__card-text">
+                Las calles de Valldemossa son empedradas y con pendiente.
+                Soller invita a caminar entre huertos. En Palma recorreras
+                bastante a pie. Lleva calzado preparado.
+              </p>
+            </div>
+          </div>
+          <div class="tips__card">
+            <div class="tips__card-icon">
+              <i class="fas fa-bus"></i>
+            </div>
+            <div class="tips__card-content">
+              <h3 class="tips__card-title">Transporte</h3>
+              <p class="tips__card-text">
+                La linea 210 conecta Palma con Valldemossa. El tren historico
+                va de Palma a Soller (1 hora). El tranvia une Soller con su
+                puerto. Con coche, la MA-10 conecta los tres destinos.
+              </p>
+            </div>
+          </div>
+          <div class="tips__card">
+            <div class="tips__card-icon">
+              <i class="fas fa-ticket-alt"></i>
+            </div>
+            <div class="tips__card-content">
+              <h3 class="tips__card-title">Entradas y billetes</h3>
+              <p class="tips__card-text">
+                La Real Cartuja, La Seu y el tren de Soller requieren
+                entrada o billete. Es recomendable comprarlos online
+                con antelacion, especialmente en verano.
+              </p>
+            </div>
+          </div>
+          <div class="tips__card">
+            <div class="tips__card-icon">
+              <i class="fas fa-camera"></i>
+            </div>
+            <div class="tips__card-content">
+              <h3 class="tips__card-title">Fotografia</h3>
+              <p class="tips__card-text">
+                Al atardecer, La Seu con el reflejo en el Parc de la Mar
+                es una postal inolvidable. En Soller, el tranvia cruzando
+                la plaza es iconico. Valldemossa enamora en cada esquina.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    </main>
+
+    <!-- Footer -->
+    <include src="./views/footer.html"></include>
+    <script type="module" src="./assets/scripts/main.js"></script>
+    <!-- do not remove this line! -->
+  </body>
+</html>

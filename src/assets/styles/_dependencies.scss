@@ -1,0 +1,18 @@
+/**
+ * Import external npm dependencies
+ */
+
+// FontAwesome icons
+@import "npm:@fortawesome/fontawesome-free/css/all.css";
+
+// Leaflet map styles
+@import "npm:leaflet/dist/leaflet.css";
+
+// Fontsource - Playfair Display (headings)
+@import "npm:@fontsource/playfair-display/400.css";
+@import "npm:@fontsource/playfair-display/700.css";
+
+// Fontsource - Source Sans Pro (body)
+@import "npm:@fontsource/source-sans-pro/400.css";
+@import "npm:@fontsource/source-sans-pro/600.css";
+@import "npm:@fontsource/source-sans-pro/700.css";

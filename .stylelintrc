@@ -1,0 +1,17 @@
+{
+  "extends": [
+    "stylelint-config-recommended-scss",
+    "stylelint-config-recess-order"
+  ],
+  "rules": {
+    "selector-class-pattern": "^.[a-z]([a-z0-9-]+)?(__([a-z0-9]+-?)+)?(--([a-z0-9]+-?)+){0,2}$",
+    "max-nesting-depth": 4,
+    "no-descending-specificity": null,
+    "scss/at-rule-no-unknown": true,
+    "declaration-block-no-duplicate-properties": true,
+    "color-no-invalid-hex": true,
+    "font-family-no-duplicate-names": true,
+    "block-no-empty": true,
+    "no-empty-source": true
+  }
+}

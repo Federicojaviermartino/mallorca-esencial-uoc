@@ -1,0 +1,117 @@
+@use "sass:math";
+@use "sass:color";
+@use "variables" as v;
+
+// --------------------------------------------------
+// Custom Sass functions (required by the assignment)
+// --------------------------------------------------
+
+/// Converts a pixel value to rem units
+/// @param {Number} $px - Value in pixels
+/// @return {Number} Value in rem
+@function to-rem($px) {
+  @return math.div($px, 16) * 1rem;
+}
+
+/// Generates a slightly transparent version of a color
+/// for use in overlay backgrounds
+/// @param {Color} $base-color - The starting color
+/// @param {Number} $opacity - Desired opacity (0 to 1)
+/// @return {Color} The resulting rgba color
+@function overlay-color($base-color, $opacity: 0.6) {
+  @return rgba($base-color, $opacity);
+}
+
+/// Returns a contrasting text color (light or dark)
+/// depending on the luminance of the background
+/// @param {Color} $bg - Background color
+/// @return {Color} Either white or dark text color
+@function text-contrast($bg) {
+  $lightness: color.channel($bg, "lightness", $space: hsl);
+
+  @if $lightness > 55% {
+    @return v.$color-text;
+  } @else {
+    @return v.$color-white;
+  }
+}
+
+// --------------------------------------------------
+// Mixins
+// --------------------------------------------------
+
+/// Responsive breakpoint mixin (mobile first)
+/// @param {String} $breakpoint - sm, md, lg, or xl
+@mixin respond-to($breakpoint) {
+  @if $breakpoint == "sm" {
+    @media (min-width: v.$bp-sm) {
+      @content;
+    }
+  } @else if $breakpoint == "md" {
+    @media (min-width: v.$bp-md) {
+      @content;
+    }
+  } @else if $breakpoint == "lg" {
+    @media (min-width: v.$bp-lg) {
+      @content;
+    }
+  } @else if $breakpoint == "xl" {
+    @media (min-width: v.$bp-xl) {
+      @content;
+    }
+  }
+}
+
+/// Centers content with a max width and horizontal padding
+@mixin container {
+  width: 100%;
+  max-width: v.$max-width;
+  padding-right: v.$spacing-lg;
+  padding-left: v.$spacing-lg;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+/// Section padding for consistent vertical rhythm
+@mixin section-padding {
+  padding-top: v.$spacing-2xl;
+  padding-bottom: v.$spacing-2xl;
+
+  @include respond-to("md") {
+    padding-top: v.$spacing-3xl;
+    padding-bottom: v.$spacing-3xl;
+  }
+}
+
+/// Applies a smooth hover scale effect
+/// @param {Number} $scale - Scale factor on hover
+@mixin hover-lift($scale: 1.03) {
+  transition: transform v.$transition-base, box-shadow v.$transition-base;
+
+  &:hover {
+    box-shadow: v.$shadow-lg;
+    transform: translateY(-4px) scale($scale);
+  }
+}
+
+/// Heading styles with the serif font
+/// @param {Number} $size - Font size
+@mixin heading($size: v.$font-size-2xl) {
+  font-family: v.$font-family-heading;
+  font-size: $size;
+  font-weight: 700;
+  line-height: v.$line-height-heading;
+}
+
+/// Visually hidden but accessible to screen readers
+@mixin sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  white-space: nowrap;
+  border: 0;
+  clip-path: inset(50%);
+}

@@ -1,0 +1,64 @@
+@use "sass:color";
+
+// Typography
+$font-family-heading: "Playfair Display", "Georgia", serif;
+$font-family-body: "Source Sans Pro", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+$font-size-base: 16px;
+$font-size-sm: 14px;
+$font-size-lg: 18px;
+$font-size-xl: 24px;
+$font-size-2xl: 32px;
+$font-size-3xl: 48px;
+$font-size-hero: 64px;
+$line-height-base: 1.6;
+$line-height-heading: 1.2;
+
+// Color palette - Mediterranean inspired
+$color-sea-deep: #1a3a5c;
+$color-sea-medium: #2d6a9f;
+$color-sea-light: #5ca0d3;
+$color-turquoise: #48c9b0;
+$color-sand: #f5e6c8;
+$color-sand-light: #faf3e6;
+$color-sand-dark: #d4a853;
+$color-rock: #6b5b4f;
+$color-rock-light: #8d7b6f;
+$color-white: #ffffff;
+$color-off-white: #fdfbf7;
+$color-text: #2c2c2c;
+$color-text-light: #5a5a5a;
+$color-overlay: rgba(26, 58, 92, 0.65);
+
+// Derived colors
+$color-sea-bg: color.scale($color-sea-light, $lightness: 85%);
+$color-sand-bg: color.scale($color-sand, $lightness: 60%);
+
+// Spacing
+$spacing-xs: 0.5rem;
+$spacing-sm: 1rem;
+$spacing-md: 1.5rem;
+$spacing-lg: 2rem;
+$spacing-xl: 3rem;
+$spacing-2xl: 4rem;
+$spacing-3xl: 6rem;
+
+// Breakpoints (mobile first)
+$bp-sm: 576px;
+$bp-md: 768px;
+$bp-lg: 992px;
+$bp-xl: 1200px;
+
+// Layout
+$max-width: 1140px;
+$border-radius: 8px;
+$border-radius-lg: 16px;
+
+// Shadows
+$shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.08);
+$shadow-md: 0 4px 12px rgba(0, 0, 0, 0.12);
+$shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.16);
+
+// Transitions
+$transition-fast: 0.2s ease;
+$transition-base: 0.3s ease;
+$transition-slow: 0.5s ease;

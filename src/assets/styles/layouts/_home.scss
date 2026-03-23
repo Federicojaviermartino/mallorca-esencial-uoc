@@ -1,0 +1,758 @@
+@use "sass:color";
+@use "../variables" as v;
+@use "../mixins" as m;
+
+// --------------------------------------------------
+// Base / Reset
+// --------------------------------------------------
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  font-family: v.$font-family-body;
+  font-size: v.$font-size-base;
+  line-height: v.$line-height-base;
+  color: v.$color-text;
+  background-color: v.$color-off-white;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  color: v.$color-sea-medium;
+  text-decoration: none;
+  transition: color v.$transition-fast;
+
+  &:hover {
+    color: v.$color-sea-deep;
+  }
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: v.$font-family-heading;
+  line-height: v.$line-height-heading;
+  color: v.$color-sea-deep;
+}
+
+// --------------------------------------------------
+// Navigation block
+// --------------------------------------------------
+
+.nav {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 1000;
+  padding: v.$spacing-sm v.$spacing-lg;
+  background-color: m.overlay-color(v.$color-sea-deep, 0.92);
+  backdrop-filter: blur(8px);
+  transition: background-color v.$transition-base;
+
+  &__container {
+    @include m.container;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__brand {
+    @include m.heading(v.$font-size-lg);
+
+    color: v.$color-white;
+
+    i {
+      margin-right: v.$spacing-xs;
+      color: v.$color-turquoise;
+    }
+  }
+
+  &__toggle {
+    display: block;
+    padding: v.$spacing-xs;
+    font-size: v.$font-size-xl;
+    color: v.$color-white;
+    cursor: pointer;
+    background: none;
+    border: none;
+
+    @include m.respond-to("md") {
+      display: none;
+    }
+  }
+
+  &__list {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    left: 0;
+    display: none;
+    flex-direction: column;
+    gap: 0;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    background-color: m.overlay-color(v.$color-sea-deep, 0.95);
+
+    @include m.respond-to("md") {
+      position: static;
+      display: flex;
+      flex-direction: row;
+      gap: v.$spacing-sm;
+      background-color: transparent;
+    }
+  }
+
+  &__list--open {
+    display: flex;
+  }
+
+  &__item {
+    text-align: center;
+  }
+
+  &__link {
+    display: block;
+    padding: v.$spacing-sm v.$spacing-md;
+    font-size: v.$font-size-sm;
+    font-weight: 600;
+    color: v.$color-sand-light;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    transition: color v.$transition-fast;
+
+    &:hover {
+      color: v.$color-turquoise;
+    }
+
+    @include m.respond-to("md") {
+      padding: v.$spacing-xs v.$spacing-sm;
+    }
+  }
+}
+
+// --------------------------------------------------
+// Hero block
+// --------------------------------------------------
+
+.hero {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  overflow: hidden;
+  text-align: center;
+  background: linear-gradient(135deg, v.$color-sea-deep 0%, v.$color-sea-medium 50%, v.$color-turquoise 100%);
+
+  &__background {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+    background-image: url("../images/hero.jpg");
+    background-position: center;
+    background-size: cover;
+    opacity: 0.45;
+  }
+
+  &__overlay {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 2;
+    background: linear-gradient(
+      180deg,
+      m.overlay-color(v.$color-sea-deep, 0.4) 0%,
+      m.overlay-color(v.$color-sea-deep, 0.2) 50%,
+      m.overlay-color(v.$color-sea-deep, 0.6) 100%
+    );
+  }
+
+  &__content {
+    position: relative;
+    z-index: 3;
+    max-width: 800px;
+    padding: v.$spacing-2xl v.$spacing-lg;
+  }
+
+  &__badge {
+    display: inline-block;
+    padding: v.$spacing-xs v.$spacing-md;
+    margin-bottom: v.$spacing-md;
+    font-size: v.$font-size-sm;
+    font-weight: 600;
+    color: v.$color-turquoise;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    border: 1px solid m.overlay-color(v.$color-turquoise, 0.5);
+    border-radius: m.to-rem(50);
+  }
+
+  &__title {
+    margin: 0 0 v.$spacing-md;
+    font-size: v.$font-size-3xl;
+    color: v.$color-white;
+
+    @include m.respond-to("md") {
+      font-size: v.$font-size-hero;
+    }
+  }
+
+  &__subtitle {
+    margin: 0 0 v.$spacing-xl;
+    font-size: v.$font-size-lg;
+    color: v.$color-sand-light;
+
+    @include m.respond-to("md") {
+      font-size: v.$font-size-xl;
+    }
+  }
+
+  &__cta {
+    display: inline-block;
+    padding: v.$spacing-sm v.$spacing-xl;
+    font-family: v.$font-family-body;
+    font-size: v.$font-size-base;
+    font-weight: 700;
+    color: v.$color-sea-deep;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+    background-color: v.$color-turquoise;
+    border: none;
+    border-radius: v.$border-radius;
+    transition: background-color v.$transition-fast, transform v.$transition-fast;
+
+    &:hover {
+      color: v.$color-white;
+      background-color: v.$color-sea-medium;
+      transform: translateY(-2px);
+    }
+
+    i {
+      margin-left: v.$spacing-xs;
+    }
+  }
+}
+
+// --------------------------------------------------
+// Section title (reusable)
+// --------------------------------------------------
+
+.section-title {
+  margin-bottom: v.$spacing-2xl;
+  text-align: center;
+
+  &__heading {
+    @include m.heading(v.$font-size-2xl);
+
+    margin: 0 0 v.$spacing-sm;
+    color: v.$color-sea-deep;
+
+    @include m.respond-to("md") {
+      font-size: v.$font-size-3xl;
+    }
+  }
+
+  &__line {
+    display: block;
+    width: 60px;
+    height: 3px;
+    margin: 0 auto v.$spacing-md;
+    background-color: v.$color-turquoise;
+    border: none;
+  }
+
+  &__description {
+    max-width: 640px;
+    margin: 0 auto;
+    font-size: v.$font-size-lg;
+    color: v.$color-text-light;
+  }
+}
+
+// --------------------------------------------------
+// About / Intro block
+// --------------------------------------------------
+
+.about {
+  @include m.section-padding;
+
+  background-color: v.$color-white;
+
+  &__container {
+    @include m.container;
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: v.$spacing-2xl;
+    align-items: center;
+
+    @include m.respond-to("md") {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  &__image-wrapper {
+    overflow: hidden;
+    border-radius: v.$border-radius-lg;
+    box-shadow: v.$shadow-lg;
+  }
+
+  &__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform v.$transition-slow;
+
+    &:hover {
+      transform: scale(1.05);
+    }
+  }
+
+  &__text {
+    font-size: v.$font-size-lg;
+    line-height: v.$line-height-base;
+    color: v.$color-text-light;
+  }
+
+  &__detail-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: v.$spacing-md;
+    padding: 0;
+    margin-top: v.$spacing-lg;
+    list-style: none;
+  }
+
+  &__detail-item {
+    display: flex;
+    gap: v.$spacing-xs;
+    align-items: center;
+    padding: v.$spacing-xs v.$spacing-md;
+    font-size: v.$font-size-sm;
+    font-weight: 600;
+    color: v.$color-sea-deep;
+    background-color: v.$color-sea-bg;
+    border-radius: m.to-rem(50);
+
+    i {
+      color: v.$color-turquoise;
+    }
+  }
+}
+
+// --------------------------------------------------
+// Highlights block
+// --------------------------------------------------
+
+.highlights {
+  @include m.section-padding;
+
+  background-color: v.$color-off-white;
+
+  &__container {
+    @include m.container;
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: v.$spacing-lg;
+
+    @include m.respond-to("sm") {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include m.respond-to("lg") {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  &__card {
+    @include m.hover-lift;
+
+    padding: v.$spacing-xl v.$spacing-lg;
+    text-align: center;
+    background-color: v.$color-white;
+    border-radius: v.$border-radius-lg;
+    box-shadow: v.$shadow-sm;
+  }
+
+  &__card-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 64px;
+    height: 64px;
+    margin: 0 auto v.$spacing-md;
+    font-size: v.$font-size-xl;
+    color: m.text-contrast(v.$color-turquoise);
+    background-color: v.$color-turquoise;
+    border-radius: 50%;
+  }
+
+  &__card-title {
+    @include m.heading(v.$font-size-xl);
+
+    margin: 0 0 v.$spacing-sm;
+  }
+
+  &__card-text {
+    margin: 0;
+    font-size: v.$font-size-base;
+    color: v.$color-text-light;
+  }
+}
+
+// --------------------------------------------------
+// Gallery block
+// --------------------------------------------------
+
+.gallery {
+  @include m.section-padding;
+
+  background-color: v.$color-white;
+
+  &__container {
+    @include m.container;
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: v.$spacing-md;
+
+    @include m.respond-to("sm") {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include m.respond-to("lg") {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+
+  &__item {
+    position: relative;
+    overflow: hidden;
+    border-radius: v.$border-radius;
+
+    &:hover .gallery__image {
+      transform: scale(1.08);
+    }
+
+    &:hover .gallery__caption {
+      opacity: 1;
+    }
+  }
+
+  &__image {
+    width: 100%;
+    height: 260px;
+    object-fit: cover;
+    transition: transform v.$transition-slow;
+  }
+
+  &__caption {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    padding: v.$spacing-md;
+    font-size: v.$font-size-sm;
+    font-weight: 600;
+    color: v.$color-white;
+    background: linear-gradient(transparent, m.overlay-color(v.$color-sea-deep, 0.8));
+    opacity: 0;
+    transition: opacity v.$transition-base;
+
+    @include m.respond-to("md") {
+      opacity: 0;
+    }
+  }
+}
+
+// --------------------------------------------------
+// Route / How to get there block
+// --------------------------------------------------
+
+.route {
+  @include m.section-padding;
+  color: v.$color-white;
+
+  background: linear-gradient(135deg, v.$color-sea-deep, v.$color-sea-medium);
+
+  .section-title__heading {
+    color: v.$color-white;
+  }
+
+  .section-title__description {
+    color: color.scale(v.$color-sea-light, $lightness: 40%);
+  }
+
+  &__container {
+    @include m.container;
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: v.$spacing-lg;
+
+    @include m.respond-to("md") {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include m.respond-to("lg") {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+
+  &__step {
+    padding: v.$spacing-lg;
+    text-align: center;
+    background-color: m.overlay-color(v.$color-white, 0.08);
+    border-radius: v.$border-radius-lg;
+    transition: background-color v.$transition-base;
+
+    &:hover {
+      background-color: m.overlay-color(v.$color-white, 0.14);
+    }
+  }
+
+  &__step-number {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    margin: 0 auto v.$spacing-md;
+    font-family: v.$font-family-heading;
+    font-size: v.$font-size-xl;
+    font-weight: 700;
+    color: v.$color-sea-deep;
+    background-color: v.$color-turquoise;
+    border-radius: 50%;
+  }
+
+  &__step-title {
+    margin: 0 0 v.$spacing-xs;
+    font-family: v.$font-family-heading;
+    font-size: v.$font-size-lg;
+    font-weight: 700;
+    color: v.$color-white;
+  }
+
+  &__step-text {
+    margin: 0;
+    font-size: v.$font-size-sm;
+    color: v.$color-sand-light;
+  }
+}
+
+// --------------------------------------------------
+// Map block
+// --------------------------------------------------
+
+.map-section {
+  @include m.section-padding;
+
+  background-color: v.$color-off-white;
+
+  &__container {
+    @include m.container;
+  }
+
+  &__wrapper {
+    overflow: hidden;
+    border-radius: v.$border-radius-lg;
+    box-shadow: v.$shadow-lg;
+  }
+
+  &__map {
+    width: 100%;
+    height: 350px;
+
+    @include m.respond-to("md") {
+      height: 450px;
+    }
+  }
+}
+
+// --------------------------------------------------
+// Tips block
+// --------------------------------------------------
+
+.tips {
+  @include m.section-padding;
+
+  background-color: v.$color-sand-light;
+
+  &__container {
+    @include m.container;
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: v.$spacing-md;
+
+    @include m.respond-to("md") {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  &__card {
+    display: flex;
+    gap: v.$spacing-md;
+    align-items: flex-start;
+    padding: v.$spacing-lg;
+    background-color: v.$color-white;
+    border-radius: v.$border-radius;
+    box-shadow: v.$shadow-sm;
+    transition: box-shadow v.$transition-base;
+
+    &:hover {
+      box-shadow: v.$shadow-md;
+    }
+  }
+
+  &__card-icon {
+    display: flex;
+    flex-shrink: 0;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    font-size: v.$font-size-lg;
+    color: v.$color-sea-deep;
+    background-color: v.$color-sea-bg;
+    border-radius: v.$border-radius;
+  }
+
+  &__card-content {
+    flex: 1;
+  }
+
+  &__card-title {
+    margin: 0 0 v.$spacing-xs;
+    font-family: v.$font-family-heading;
+    font-size: v.$font-size-lg;
+    font-weight: 700;
+    color: v.$color-sea-deep;
+  }
+
+  &__card-text {
+    margin: 0;
+    font-size: v.$font-size-base;
+    color: v.$color-text-light;
+  }
+}
+
+// --------------------------------------------------
+// Footer block
+// --------------------------------------------------
+
+.footer {
+  padding: v.$spacing-2xl v.$spacing-lg;
+  color: v.$color-sand-light;
+  background-color: v.$color-sea-deep;
+
+  &__container {
+    @include m.container;
+
+    text-align: center;
+  }
+
+  &__brand {
+    @include m.heading(v.$font-size-xl);
+
+    margin: 0 0 v.$spacing-sm;
+    color: v.$color-white;
+
+    i {
+      margin-right: v.$spacing-xs;
+      color: v.$color-turquoise;
+    }
+  }
+
+  &__text {
+    margin: 0 0 v.$spacing-md;
+    font-size: v.$font-size-sm;
+    color: v.$color-rock-light;
+  }
+
+  &__social {
+    display: flex;
+    gap: v.$spacing-md;
+    justify-content: center;
+    padding: 0;
+    margin-bottom: v.$spacing-lg;
+    list-style: none;
+  }
+
+  &__social-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    font-size: v.$font-size-lg;
+    color: v.$color-sand-light;
+    background-color: m.overlay-color(v.$color-white, 0.1);
+    border-radius: 50%;
+    transition: background-color v.$transition-fast, color v.$transition-fast;
+
+    &:hover {
+      color: v.$color-white;
+      background-color: v.$color-turquoise;
+    }
+  }
+
+  &__divider {
+    width: 80px;
+    height: 1px;
+    margin: 0 auto v.$spacing-md;
+    background-color: m.overlay-color(v.$color-white, 0.2);
+    border: none;
+  }
+
+  &__copy {
+    margin: 0;
+    font-size: v.$font-size-sm;
+    color: v.$color-rock-light;
+  }
+}
+
+// --------------------------------------------------
+// Utility: screen reader only
+// --------------------------------------------------
+
+.sr-only {
+  @include m.sr-only;
+}
